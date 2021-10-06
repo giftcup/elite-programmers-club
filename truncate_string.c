@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #define MAX_LEN 25
 
@@ -13,7 +14,7 @@ int main(void)
     word_len = read_string(string, MAX_LEN + 1);
     if (word_len > MAX_LEN)
     {
-        add_points(string, word_len-1);
+        add_points(string, word_len);
     }
     printf("%s\n", string);
 }
@@ -37,7 +38,6 @@ int read_string(char *string, int len)
     while ((ch = getchar()) != '\n' && pos < len)
         string[pos++] = ch;
     string[pos] = '\0';
-
     return pos;
 }
 
@@ -50,9 +50,5 @@ int read_string(char *string, int len)
 
 void add_points(char *string, int len)
 {
-    for (int i = len; i < MAX_LEN + 3; i++)
-    {
-        string[i] = '.';
-    }
-    string[MAX_LEN + 3] = '\0';
+    strcat(string, "...");
 }
