@@ -39,7 +39,9 @@ int read_word(char *word, int len)
         ch = read_char();
     }
     word[pos] = '\0';
-
+    if (pos == 0)
+        return pos;
+        
     if (memchr(vowels, tolower(word[0]), sizeof(vowels)))
     {
         begins_with_vowel(word);
@@ -50,7 +52,7 @@ int read_word(char *word, int len)
         // printf("%s\n", word);
     }
 
-    return pos;
+    return strlen(word);
 }
 
 /*
@@ -88,6 +90,7 @@ void begins_with_consonant(char *word, char *vowels, int len)
             word[j] = word[j + 1];
         }
         word[len-1] = temp;
+        i++;
     }
 
     strcat(word, "ay");

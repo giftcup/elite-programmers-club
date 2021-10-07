@@ -17,7 +17,7 @@ void add_word(char *word)
         line_len++; 
     }
     strcat(line, word);
-    line_len = strlen(word);
+    line_len += strlen(word);
     num_words++;
 }
 
