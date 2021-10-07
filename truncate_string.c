@@ -20,7 +20,7 @@ int main(void)
 }
 
 /*
-    read_word: Gets an empty array of characters and
+    read_string: Gets an empty array of characters and
                reads characters from stdin into the
                array, stoping when the length has been
                exceeded or when the new-line character
@@ -42,7 +42,7 @@ int read_string(char *string, int len)
 }
 
 /*
-    add_points: Adds `...' at the end of a string whose
+    add_points: Adds `...` at the end of a string whose
                 length exceeds the given string length.
 
                 returns;
